@@ -100,7 +100,7 @@ LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MARTe2_Components_DIR/Build/x86-linux/Componen
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:../Build/x86-linux/DataSources/RandomDataSource/
 
 ### Add own GAM lib path
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:../Build/x86-linux/GAMs/JASampleGAM
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:../Build/x86-linux/GAMs/SampleGAM
 
 ### Add EPICS lib path
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$EPICS_BASE/lib/$EPICS_HOST_ARCH

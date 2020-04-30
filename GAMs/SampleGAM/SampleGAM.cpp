@@ -1,26 +1,3 @@
-/**
- * @file JASampleGAM.cpp
- * @brief Source file for class JASampleGAM
- * @date Nov 26, 2018
- * @author aneto
- *
- * @copyright Copyright 2015 F4E | European Joint Undertaking for ITER and
- * the Development of Fusion Energy ('Fusion for Energy').
- * Licensed under the EUPL, Version 1.1 or - as soon they will be approved
- * by the European Commission - subsequent versions of the EUPL (the "Licence")
- * You may not use this work except in compliance with the Licence.
- * You may obtain a copy of the Licence at: http://ec.europa.eu/idabc/eupl
- *
- * @warning Unless required by applicable law or agreed to in writing,
- * software distributed under the Licence is distributed on an "AS IS"
- * basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the Licence permissions and limitations under the Licence.
-
- * @details This source file contains the definition of all the methods for
- * the class JASampleGAM (public, protected, and private). Be aware that some
- * methods, such as those inline could be defined on the header file, instead.
- */
-
 /*---------------------------------------------------------------------------*/
 /*                         Standard header includes                          */
 /*---------------------------------------------------------------------------*/
@@ -29,7 +6,7 @@
 /*                         Project header includes                           */
 /*---------------------------------------------------------------------------*/
 
-#include "JASampleGAM.h"
+#include "SampleGAM.h"
 
 #include "AdvancedErrorManagement.h"
 
@@ -41,7 +18,7 @@
 /*                           Method definitions                              */
 /*---------------------------------------------------------------------------*/
 
-JASampleGAM::JASampleGAM() {
+SampleGAM::SampleGAM() {
     // initialize member variables.
     param1 = 0;
     param2 = 0;
@@ -55,10 +32,10 @@ JASampleGAM::JASampleGAM() {
 
 }
 
-JASampleGAM::~JASampleGAM() {
+SampleGAM::~SampleGAM() {
 }
 
-bool JASampleGAM::Initialise(MARTe::StructuredDataI & data) {
+bool SampleGAM::Initialise(MARTe::StructuredDataI & data) {
     //GAM parameters are initialized.
     using namespace MARTe;
     bool ok = GAM::Initialise(data);
@@ -77,12 +54,12 @@ bool JASampleGAM::Initialise(MARTe::StructuredDataI & data) {
     return ok;
 }
 
-bool JASampleGAM::PrepareNextState(const MARTe::char8 * const currentStateName, const MARTe::char8 * const nextStateName) {
+bool SampleGAM::PrepareNextState(const MARTe::char8 * const currentStateName, const MARTe::char8 * const nextStateName) {
     //This method changes internal parameter based on next realtime state.
     return true;
 }
 
-bool JASampleGAM::Setup() {
+bool SampleGAM::Setup() {
     // Setup memory for input/output signals on the GAM.
     using namespace MARTe;
     bool ok = (numberOfInputSignals == 2u);
@@ -156,7 +133,7 @@ bool JASampleGAM::Setup() {
     return ok;
 }
 
-bool JASampleGAM::Execute() {
+bool SampleGAM::Execute() {
     // This method is called every realtime state thread cycle.
     using namespace MARTe;
     REPORT_ERROR(ErrorManagement::Information, "input1 is %d.", *input1);
@@ -174,4 +151,4 @@ bool JASampleGAM::Execute() {
     return true;
 }
 
-CLASS_REGISTER(JASampleGAM, "1.0")
+CLASS_REGISTER(SampleGAM, "1.0")

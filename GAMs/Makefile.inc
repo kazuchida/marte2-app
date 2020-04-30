@@ -25,7 +25,7 @@
 #############################################################
 
 # ToDo: Add GAM package name bellow.
-SPB = JASampleGAM.x 
+SPB = SampleGAM.x 
 
 MAKEDEFAULTDIR=$(MARTe2_DIR)/MakeDefaults
 
